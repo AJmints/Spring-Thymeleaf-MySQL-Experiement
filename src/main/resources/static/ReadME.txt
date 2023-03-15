@@ -28,7 +28,7 @@ into the text box, everything will post just fine to mySQL.
 accidently put an Integer in instead of String, but no luck. When I look at the templates/feed/feed.html, I haven't seen anything that suggest I am doing it wrong.
 
 -Post would do what it was suppose to prior to connecting it to MySQL and setting up
-the new data Interfaces. 
+the new data Interfaces, UserRepository and PostRepository under data. 
 
 -When I go to look for help on Google, I have not had any luck figuring out what to ask
 it to see if anyone else has experienced my issue. I am sure someone has and I would bet
