@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="~{fragments :: head}"></head>
+<body class="container">
+<h1>Feed</h1>
+<nav th:replace="~{fragments :: navigation}"></nav>
+
+<form method="post" action="/feed/submit">
+    <div class="form-group">
+        <label>User (Placeholder until I learn how to use logged in accounts)
+            <input th:field="${post.posterName}" class="form-control">
+        </label>
+    </div>
+    <p class="text-danger" th:errors="${post.posterName}"></p>
+    <div class="form-group">
+        <label>What's on your mind?
+            <textarea th:field="${post.post}" rows="4" cols="50" class="form-control">Whats</textarea>
+        </label>
+    </div>
+    <p class="text-danger" th:errors="${post.post}"></p>
+    <div class="form-group">
+        <input type="submit" value="Submit Post" class="btn btn-success">
+    </div>
+</form><br>
+
+<table style="width:100%" class="table table-striped">
+    <thread>
+        <tr>
+            <th style="width:10%">Id</th>
+            <th style="width:25%">User</th>
+            <th>Post</th>
+        </tr>
+    </thread>
+    <tr th:each="post: ${allPost}">
+        <td th:text="${post.id}"></td>
+        <td th:text="${post.posterName}"></td>
+        <td th:text="${post.post}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
