@@ -1,10 +1,10 @@
 package org.experiment.solidifyconcepts.models;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 public abstract class IdGenerator {
 
     /** Abstract class to assign all users and post with a unique ID tag **/
